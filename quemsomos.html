@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro Acadêmico Luiza Mahin</title>
+</head>
+<body>
+    
+    <header>
+        <img src="calm.png" style="width: 100px; image-rendering:crisp-edges; border-radius: 100%; position: relative;">
+      <h1>Quem somos</h1>
+        <nav style="position: relative;">
+          <a href="index.html">Página inicial</a>
+          <a href="#">Postagens</a>
+          <a href="quemsomos.html">Quem somos</a>
+          <a href="#">Administrador</a>
+        </nav>
+      </header>
+    
+      <div class="iear">
+        <a href="https://iear.uff.br/" target="_blank" rel="noopener noreferrer">
+            <br>
+         <img width="300px;" src="https://iear.uff.br/wp-content/uploads/sites/232/2021/08/cropped-WhatsApp-Image-2021-08-12-at-11.33.49-1.jpeg">
+        </a>
+ </div>
+
+ <div class="ig">
+    <a href="https://www.instagram.com/ca.luisamahin/" target="_blank" rel="noopener noreferrer">
+        <br>
+     <img width="100px;" src="https://i.seadn.io/gae/dagAl0UM1srhLO8pD7cblU0DR_mEypemN9b66jF1rmgKFNvYWrki72ryMTMY-qsr3GQ76pChB74UaiynLSmmZfIP3GPKsaRfk2rq?auto=format&dpr=1&w=1000">
+    </a>
+</div>
+<main id="contact-posts">
+    <!-- Autores carregados via JS -->
+</main>
+
+      <footer>
+        <p>&copy; 2025 Centro Acadêmico Luiza Mahin</p>
+      </footer>
+
+      <style>
+        .author-card {
+  text-align: center;
+}
+.author-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.author-bio {
+  font-size: 0.95rem;
+  color: #444;
+}
+        .iear{
+           background: white;
+            border-radius: 8px;
+        position:relative;
+          top: 30px;
+          float: right;
+        }
+        .ig{
+position: absolute;
+          float: right;
+        }
+        
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #7540a5
+}
+
+header {
+  background: #333;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+main {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.post {
+  background: white;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.post h2 {
+  margin-top: 0;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #333;
+  color: white;
+}
+
+.post-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.post-date {
+  font-size: 0.85rem;
+  color: #666;
+}
+      </style>
+
+      <script>
+        const authors = [
+  {
+    name: "Leandro Ramos da Silva",
+    photo: "",
+    bio: "",
+    lattes: "",
+    uffmail: ""
+  },
+  {
+    name: "",
+    photo: "",
+    bio: "",
+    lattes: "",
+    uffmail: ""
+  },
+  {
+    name: "",
+    photo: "",
+    bio: "",
+    lattes: "",
+    uffmail: ""
+  },
+  {
+    name: "",
+    photo: "",
+    bio: "",
+    lattes: "",
+    uffmail: ""
+  },
+  {
+    name: "",
+    photo: "",
+    bio: "",
+    lattes: "",
+    uffmail: ""
+  },
+  {
+    name: "Pablo Quezado",
+    photo: "http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K1197212A3",
+    bio: "Graduando em Pedagogia pelo Instituto de Educação de Angra dos Reis da Universidade Federal Fluminense (IEAR-UFF).",
+    lattes: "http://lattes.cnpq.br/3986415920870527",
+    uffmail: "pabloquezado@id.uff.br"
+  },
+  {
+    name: "",
+    photo: "",
+    bio: "",
+    lattes: "",
+    uffmail: ""
+  },
+  {
+    name: "",
+    photo: "",
+    bio: "",
+    lattes: "",
+    uffmail: ""
+  },
+  {
+    name: "",
+    photo: "",
+    bio: "",
+    lattes: "",
+    uffmail: ""
+  },
+  {
+    name: "",
+    photo: "",
+    bio: "",
+    lattes: "",
+    uffmail: ""
+  }
+];
+
+const container = document.getElementById("contact-posts");
+
+authors.forEach(author => {
+  const authorCard = document.createElement("article");
+  authorCard.classList.add("post", "author-card");
+
+  authorCard.innerHTML = `
+    <img src="${author.photo}" alt="${author.name}" class="author-photo">
+    <h2>${author.name}</h2>
+    <p class="author-bio">${author.bio}</p>
+    <p>
+      <a href="${author.lattes}" target="_blank">Currículo Lattes</a> |
+      <a href="mailto:${author.uffmail}">${author.uffmail}</a>
+    </p>
+  `;
+
+  container.appendChild(authorCard);
+});
+      </script>
+
+</body>
+</html>
