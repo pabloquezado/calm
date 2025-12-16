@@ -1,4 +1,4 @@
-# Matematizar
+# Centro Acadêmico Luiza Mahin
 
 <p align="left">
 </p>
