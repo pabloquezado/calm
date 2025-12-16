@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro Acadêmico Luiza Mahin</title>
+</head>
+<body>
+    
+    <header>
+        <img src="calm.png" style="width: 100px; image-rendering:crisp-edges; border-radius: 100%; position: relative;">
+        <nav style="position: relative;">
+          <a href="index.html">Página inicial</a>
+          <a href="#">Postagens</a>
+          <a href="quemsomos.html">Quem somos</a>
+          <a href="#">Administrador</a>
+        </nav>
+      </header>
+    
+      <div class="iear">
+        <a href="https://iear.uff.br/" target="_blank" rel="noopener noreferrer">
+            <br>
+         <img width="300px;" src="https://iear.uff.br/wp-content/uploads/sites/232/2021/08/cropped-WhatsApp-Image-2021-08-12-at-11.33.49-1.jpeg">
+        </a>
+ </div>
+
+ <div class="ig">
+    <a href="https://www.instagram.com/ca.luisamahin/" target="_blank" rel="noopener noreferrer">
+        <br>
+     <img width="100px;" src="https://i.seadn.io/gae/dagAl0UM1srhLO8pD7cblU0DR_mEypemN9b66jF1rmgKFNvYWrki72ryMTMY-qsr3GQ76pChB74UaiynLSmmZfIP3GPKsaRfk2rq?auto=format&dpr=1&w=1000">
+    </a>
+</div>
+      <main id="posts-container">
+        <!-- Posts serão carregados aqui via JS -->
+      </main>
+
+      <footer>
+        <p>&copy; 2025 Centro Acadêmico Luiza Mahin</p>
+      </footer>
+
+      <style>
+        .iear{
+           background: white;
+            border-radius: 8px;
+        position:relative;
+          top: 30px;
+          float: right;
+        }
+        .ig{
+position: absolute;
+          float: right;
+        }
+        
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #7540a5
+}
+
+header {
+  background: #333;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+main {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.post {
+  background: white;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.post h2 {
+  margin-top: 0;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #333;
+  color: white;
+}
+
+.post-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.post-date {
+  font-size: 0.85rem;
+  color: #666;
+}
+      </style>
+
+      <script>
+const posts = [
+  {
+    title: "Recepção de Calouros da Pedagogia",
+    image: "https://img.freepik.com/vetores-gratis/desenho-de-padrao-para-a-celebracao-da-temporada-de-retorno-a-escola_23-2150621136.jpg?semt=ais_se_enriched&w=740&q=80",
+    content: "Desejando boas-vindas aos nossos vencedores!",
+    date: "9 de Março de 2025"
+  },
+  {
+    title: "Primeiro Post",
+    image: "https://img.elo7.com.br/product/zoom/4A04DC4/papel-de-parede-reguas-e-cadernos-cadernos.jpg",
+    content: "Bem-vindo ao website do Centro Acadêmico! Este é o primeiro post.",
+    date: "15 de Dezembro de 2025"
+  }
+];
+
+const container = document.getElementById('posts-container');
+
+posts.forEach(post => {
+  const postElement = document.createElement('article');
+  postElement.classList.add('post');
+  postElement.innerHTML = `
+    <img src="${post.image}" alt="${post.title}" class="post-image">
+    <h2>${post.title}</h2>
+    <p class="post-date">${post.date}</p>
+    <p>${post.content}</p>
+  `;
+
+  container.appendChild(postElement);
+});
+      </script>
+
+</body>
+</html>
