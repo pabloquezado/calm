@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+</head>
+<body>
+
+    <header>
+        <img src="calm.png" style="width: 100px; image-rendering:crisp-edges; border-radius: 100%; position: relative;">
+        <nav style="position: relative;">
+          <a href="index.html">Página inicial</a>
+          <a href="#">Postagens</a>
+          <a href="quemsomos.html">Quem somos</a>
+          <a href="login.html">Administrador</a>
+        </nav>
+      </header>
+
+  <main>
+    <section class="post login-card">
+      <h2>Acesso Administrativo</h2>
+
+      <form id="login-form">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="seu@email.com">
+
+        <label for="password">Senha</label>
+        <input type="password" id="password" placeholder="********">
+
+        <p id="error-message" class="error-message"></p>
+
+        <button type="submit">Entrar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Centro Acadêmico Luiza Mahin</p>
+  </footer>
+
+  <style>
+        .author-card {
+  text-align: center;
+}
+.author-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.author-bio {
+  font-size: 0.95rem;
+  color: #444;
+}
+        .iear{
+           background: white;
+            border-radius: 8px;
+        position:relative;
+          top: 30px;
+          float: right;
+        }
+        .ig{
+position: absolute;
+          float: right;
+        }
+        
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #7540a5
+}
+
+header {
+  background: #333;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+main {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.post {
+  background: white;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.post h2 {
+  margin-top: 0;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #333;
+  color: white;
+}
+
+.post-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.post-date {
+  font-size: 0.85rem;
+  color: #666;
+}
+.login-card {
+  max-width: 400px;
+  margin: 3rem auto;
+}
+
+.login-card h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.login-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-card label {
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}
+
+.login-card input {
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.login-card button {
+  padding: 0.7rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login-card button:hover {
+  background-color: #555;
+}
+
+.error-message {
+  color: #c0392b;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+  </style>
+
+  <script>
+const form = document.getElementById("login-form");
+const emailInput = document.getElementById("email");
+const passwordInput = document.getElementById("password");
+const errorMessage = document.getElementById("error-message");
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const email = emailInput.value.trim();
+  const password = passwordInput.value.trim();
+
+  if (!email || !password) {
+    errorMessage.textContent = "Por favor, preencha email e senha.";
+    return;
+  }
+
+  errorMessage.textContent = "";
+
+  // Login simulado
+  alert("Login realizado com sucesso (simulado).");
+
+  // Futuro:
+  // aqui você pode redirecionar ou validar via backend/CMS
+});
+
+  </script>
+</body>
+</html>
