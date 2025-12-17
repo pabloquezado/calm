@@ -1,46 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Centro Acadêmico Luiza Mahin - IEAR/UFF">
+    <meta property="og:description" content="Representando a voz ativa dos alunos de Pedagogia! Gestão Educ(a)ção">
+    <meta property="og:url" content="https://pabloquezado.github.io/calm/">
+    <meta property="og:image" content="assets/calm.png"/>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
+  <title>Centro Acadêmico Luiza Mahin</title>
+    <link rel="icon" type="image/x-icon" href="assets/calm.png">
 </head>
 <body>
-
+  <script type="module" src="login.js"></script>
     <header>
-        <img src="calm.png" style="width: 100px; image-rendering:crisp-edges; border-radius: 100%; position: relative;">
+        <img src="assets/calm.png" style="width: 100px; image-rendering:crisp-edges; border-radius: 100%; position: relative;">
         <nav style="position: relative;">
           <a href="index.html">Página inicial</a>
-          <a href="#">Postagens</a>
+          <a href="posts.html">Postagens</a>
           <a href="quemsomos.html">Quem somos</a>
-          <a href="login.html">Administrador</a>
+          <a href="#">Administrador</a>
         </nav>
       </header>
 
-  <main>
-    <section class="post login-card">
-      <h2>Acesso Administrativo</h2>
-
-      <form id="login-form">
-        <label for="email">Email</label>
-        <input type="email" id="email" placeholder="seu@email.com">
-
-        <label for="password">Senha</label>
-        <input type="password" id="password" placeholder="********">
-
-        <p id="error-message" class="error-message"></p>
-
-        <button type="submit">Entrar</button>
-      </form>
-    </section>
-  </main>
+      <main>
+        <section class="post login-card">
+          <h2 id="form-title">Entrar</h2>
+          <form id="auth-form">
+            <!-- Campo foto (apenas cadastro) -->
+            <div id="photo-group" class="form-group hidden">
+              <label for="photoURL">Foto de perfil (URL)</label>
+              <input
+                type="url"
+                id="photoURL"
+                placeholder="https://exemplo.com/foto.jpg"
+              >
+              <small class="password-hint">
+                Informe o link da imagem do seu Lattes (botão direito, copiar link)
+              </small>
+            </div>
+         <!-- Campo Nome (apenas cadastro) -->
+            <div id="username-group" class="form-group hidden">
+              <label for="username">Nome de usuário</label>
+              <input type="text" id="username" placeholder="Seu nome">
+            </div>
+    
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="seu@email.com">
+            </div>
+    
+            <div class="form-group">
+              <label for="password">Senha</label>
+              <input
+  type="password"
+  id="password"
+  placeholder="Mínimo 6 caracteres"
+  minlength="6"
+  required
+>
+            </div>
+    
+            <p id="error-message" class="error-message"></p>
+    
+            <button type="submit" id="submit-btn">Entrar</button>
+          </form>
+    
+          <!-- Alternância -->
+          <p class="toggle-text" id="toggle-to-register">
+            Não possui conta? <span class="toggle-link">Cadastrar</span>
+          </p>
+    
+          <p class="toggle-text hidden" id="toggle-to-login">
+            Já possui conta? <span class="toggle-link">Entrar</span>
+          </p>
+        </section>
+      </main>
 
   <footer>
     <p>&copy; 2025 Centro Acadêmico Luiza Mahin</p>
   </footer>
 
   <style>
-        .author-card {
+  .author-card {
   text-align: center;
 }
 .author-photo {
@@ -175,34 +218,113 @@ footer {
   margin-bottom: 1rem;
 }
 
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.toggle-text {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.toggle-link {
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.toggle-link:hover {
+  color: #555;
+}
   </style>
 
   <script>
-const form = document.getElementById("login-form");
+const photoGroup = document.getElementById("photo-group");
+const photoInput = document.getElementById("photo");
+
+const formTitle = document.getElementById("form-title");
+const submitBtn = document.getElementById("submit-btn");
+
+const usernameGroup = document.getElementById("username-group");
+const usernameInput = document.getElementById("username");
+
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
+
 const errorMessage = document.getElementById("error-message");
 
-form.addEventListener("submit", function (event) {
-  event.preventDefault();
+const toggleToRegister = document.getElementById("toggle-to-register");
+const toggleToLogin = document.getElementById("toggle-to-login");
+
+let isRegisterMode = false;
+
+// Alternar para cadastro
+toggleToRegister.addEventListener("click", showRegister);
+
+// Alternar para login
+toggleToLogin.addEventListener("click", showLogin);
+
+function showRegister() {
+  isRegisterMode = true;
+
+  formTitle.textContent = "Cadastrar";
+  submitBtn.textContent = "Cadastrar";
+
+  usernameGroup.classList.remove("hidden");
+  photoGroup.classList.remove("hidden");
+
+  toggleToRegister.classList.add("hidden");
+  toggleToLogin.classList.remove("hidden");
+
+  errorMessage.textContent = "";
+}
+
+function showLogin() {
+  isRegisterMode = false;
+
+  formTitle.textContent = "Entrar";
+  submitBtn.textContent = "Entrar";
+
+  usernameGroup.classList.add("hidden");
+  photoGroup.classList.add("hidden");
+
+  toggleToLogin.classList.add("hidden");
+  toggleToRegister.classList.remove("hidden");
+
+  errorMessage.textContent = "";
+}
+// Validação básica
+document.getElementById("auth-form").addEventListener("submit", (e) => {
+
+  if (isRegisterMode && !photoInput.files.length) {
+  errorMessage.textContent = "Escolha uma foto de perfil.";
+  return;
+}  
+  e.preventDefault();
 
   const email = emailInput.value.trim();
   const password = passwordInput.value.trim();
+  const username = usernameInput.value.trim();
+
+  if (isRegisterMode && !username) {
+    errorMessage.textContent = "Informe o nome de usuário.";
+    return;
+  }
 
   if (!email || !password) {
-    errorMessage.textContent = "Por favor, preencha email e senha.";
+    errorMessage.textContent = "Preencha email e senha.";
     return;
   }
 
   errorMessage.textContent = "";
-
-  // Login simulado
-  alert("Login realizado com sucesso (simulado).");
-
-  // Futuro:
-  // aqui você pode redirecionar ou validar via backend/CMS
 });
-
   </script>
 </body>
 </html>
