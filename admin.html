@@ -11,39 +11,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centro Acadêmico Luiza Mahin</title>
     <link rel="icon" type="image/x-icon" href="assets/calm.png">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
         <img src="assets/calm.png" class="admin-avatar" alt="Foto do administrador" style="width: 100px; image-rendering:crisp-edges; border-radius: 100%; position: relative;">       
-        <span id="welcome-text">Boas-vindas!</span>
-
+        <h2 id="welcome-text">Boas-vindas!</h2>
         <nav style="position: relative;">
-
             <nav class="admin-nav">
                 <div class="assets/admin-user">
                   </div>
-                <a href="index.html">Página inicial</a>
-                <a href="postsadmin.html">Minhas Postagens</a>
+                <a href="index.html">Notícias</a>
+                 <div class="dropdown">
+                  <a href="#" class="dropdown-toggle">
+                    Ensino, Pesquisa e Extensão ▾
+                  </a>
+                  <div class="dropdown-menu">
+                    <a href="pibid.html">Iniciação à Docência</a>
+                    <a href="pibic.html">Iniciação Científica</a>
+                    <a href="pe.html">Projetos de Extensão</a>
+                    <a href="public.html">Publicações</a>
+                  </div>
+                </div>
                 <a href="quemsomos.html">Quem somos</a>
                 <span id="logout-btn" class="logout-btn">Sair</span>
               </nav>
         </nav>
       </header>
 
-  <main>
-    <section class="post">
-      <h2>Painel Administrativo</h2>
-      <p>Aqui você poderá criar, editar e publicar suas postagens.</p>
-    </section>
-  </main>
+      <main>
+        <h2>Criar nova postagem</h2>    
+        <form id="post-form">
+        <input type="text" id="title" placeholder="Título" required />
+        <input type="url" id="coverImage" placeholder="URL da imagem de capa" required />
+        <textarea id="excerpt" placeholder="Resumo da postagem" required></textarea>
+        <textarea id="content" placeholder="Conteúdo completo" required></textarea>
+        <button type="submit">Publicar</button>
+        </form>  
+          
+        <h2>Minhas postagens</h2>
+        <div id="my-posts"></div>
+        </main>
 
   <footer>
-    <p>&copy; 2025 Centro Acadêmico Luiza Mahin</p>
+    <p>&copy; <small>2025</small> &#8203; &#8203; Centro Acadêmico Luiza Mahin &#8203; <span style="font-weight: bold;"class="highlight">Gestão Educ(a)ção</span></p>
   </footer>
-
-
+    
   <style>
+    #content{
+    height: 100px;
+    }
        .iear{
            background: white;
             border-radius: 8px;
@@ -118,6 +136,30 @@ footer {
   font-size: 0.85rem;
   color: #666;
 }
+
+.admin-avatar{
+  margin-left: 9.5rem;
+  width: 110px!important;
+}
+.highlight {
+  position: relative;
+  color: #fab204;
+}
+.highlight::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 3px;
+  background: #fab204;
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+.highlight:hover::after {
+  width: 100%;
+}
+      
 .admin-nav {
   background: #333;
   color: white;
@@ -139,14 +181,17 @@ footer {
 }
 
 .logout-btn {
- margin-left: 10px;
+  color: #fab204;
+  margin-left: 10px;
   cursor: pointer;
   font-weight: bold;
   text-decoration: underline;
+  transition: all .5s ease;
 }
 
 .logout-btn:hover {
-  color: #ccc;
+  color: #999;
+  transition: all .5s ease;
 }
 
   </style>
