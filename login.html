@@ -1,27 +1,35 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Centro Acadêmico Luiza Mahin - IEAR/UFF">
-    <meta property="og:description" content="Representando a voz ativa dos alunos de Pedagogia! Gestão Educ(a)ção">
-    <meta property="og:url" content="https://pabloquezado.github.io/calm/">
-    <meta property="og:image" content="assets/calm.png"/>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Centro Acadêmico Luiza Mahin</title>
-    <link rel="icon" type="image/x-icon" href="assets/calm.png">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro Acadêmico Luiza Mahin</title>
+    <link rel="stylesheet" href="https://pabloquezado.github.io/calm/style.css">
 </head>
 <body>
   <script type="module" src="login.js"></script>
     <header>
-        <img src="assets/calm.png" style="width: 100px; image-rendering:crisp-edges; border-radius: 100%; position: relative;">
-        <nav style="position: relative;">
-          <a href="index.html">Página inicial</a>
-          <a href="posts.html">Postagens</a>
-          <a href="quemsomos.html">Quem somos</a>
-          <a href="#">Administrador</a>
-        </nav>
+        <img class="logo-anim" src="assets/calm.png" style="width: 100px; image-rendering:crisp-edges; border-radius: 100%; position: relative;">
+   <a style="text-decoration:none; color: white;" href="index.html"></a>
+     <h2 class="title-anim">Painel do <span class="highlight">Administrador</span></h2>
+    </a>
+      <nav class="main-nav">
+        <a href="index.html">Notícias</a>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle">
+            Ensino, Pesquisa e Extensão ▾
+          </a>
+          <div class="dropdown-menu">
+            <a href="#">Iniciação à Docência</a>
+            <a href="#">Iniciação Científica</a>
+            <a href="#">Projetos de Extensão</a>
+            <a href="#">Publicações</a>
+          </div>
+        </div>    
+        <a href="quemsomos.html">Quem somos</a>
+        <a href="login.html">Administrador</a>
+      </nav>   
       </header>
 
       <main>
@@ -79,7 +87,7 @@
       </main>
 
   <footer>
-    <p>&copy; 2025 Centro Acadêmico Luiza Mahin</p>
+ <p>&copy; <small>2025</small> &#8203; &#8203; Centro Acadêmico Luiza Mahin &#8203; <span style="font-weight: bold;"class="highlight">Gestão Educ(a)ção</span></p>
   </footer>
 
   <style>
