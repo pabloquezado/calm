@@ -13,58 +13,206 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centro Acadêmico Luiza Mahin</title>
     <link rel="icon" type="image/x-icon" href="assets/calm.png">
+    <link rel="stylesheet" href="style.css">
 <body>
-    <header>
-        <img src="assets/calm.png" style="width: 100px; image-rendering:crisp-edges; border-radius: 100%; position: relative;">
-      <h1>Quem somos</h1>
-        <nav style="position: relative;">
-          <a href="index.html">Página inicial</a>
-          <a href="posts.html">Postagens</a>
-          <a href="quemsomos.html">Quem somos</a>
-          <a href="login.html">Administrador</a>
-        </nav>
+        <header>
+        <img class="logo-anim" src="assets/calm.png" style="width: 100px; image-rendering:crisp-edges; border-radius: 100%; position: relative;">
+   <a style="text-decoration:none; color: white;" href="quemsomos.html"></a>
+     <h2 class="title-anim">Quem <span class="highlight">somos</span></h2>
+    </a>
+      <nav class="main-nav">
+        <a href="calm.html">Notícias</a>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle">
+            Ensino, Pesquisa e Extensão ▾
+          </a>
+          <div class="dropdown-menu">
+            <a href="#">Iniciação à Docência</a>
+            <a href="#">Iniciação Científica</a>
+            <a href="#">Projetos de Extensão</a>
+            <a href="#">Publicações</a>
+          </div>
+        </div>    
+        <a href="quemsomos.html">Quem somos</a>
+        <a href="login.html">Administrador</a>
+      </nav>   
       </header>
     
-      <div class="iear">
-        <a href="https://iear.uff.br/" target="_blank" rel="noopener noreferrer">
-            <br>
-         <img width="300px;" src="https://iear.uff.br/wp-content/uploads/sites/232/2021/08/cropped-WhatsApp-Image-2021-08-12-at-11.33.49-1.jpeg">
-        </a>
- </div>
-
-<div class="ig">
-    <a href="https://www.instagram.com/ca.luisamahin/" target="_blank" rel="noopener noreferrer">
-        <br>
-     <img width="100px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1200px-Instagram_icon.png">
-    </a>
-<br>
-      <a href="https://app.uff.br/iduff/" target="_blank" rel="noopener noreferrer">
-        <br>
-     <img style="border-radius: 100px;" width="100px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU6n78kqUYVMAvSP_SM8AaPE7ruyOoT5JFxA&s">
-    </a>
-    <a href="https://www.uff.br/proaes/bolsas-e-auxilios/" target="_blank" rel="noopener noreferrer">
-      <br>
-   <img style="border-radius: 100px;" width="100px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE-0CQpjhexGA0lgb3DZxQcH3v3OAsTUOYag&s">
+ <div class="ig">
+  <a href="https://www.instagram.com/ca.luisamahin/" target="_blank" rel="noopener noreferrer">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1200px-Instagram_icon.png" alt="Instagram">
+  </a>
+  <a href="https://app.uff.br/iduff/" target="_blank" rel="noopener noreferrer">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU6n78kqUYVMAvSP_SM8AaPE7ruyOoT5JFxA&s
+    " alt="Link 1">
+  </a>
+  <a href="https://www.uff.br/proaes/bolsas-e-auxilios/" target="_blank" rel="noopener noreferrer">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE-0CQpjhexGA0lgb3DZxQcH3v3OAsTUOYag&s" alt="Link 2">
   </a>
   <a href="https://monitoria.uff.br/" target="_blank" rel="noopener noreferrer">
-    <br>
- <img style="border-radius: 100px;" width="100px;" src="https://lh5.googleusercontent.com/proxy/b62OCLYWMYFVjaxKn72cpmBTgG0gU-LwQvjXFqhlSafdBYmq2yTCJglkpd64fhF1R6a04rBMe2I7_ITKr1_4P5Bxj2MlSoMBkjiVF9nw4Lr6YC1AXvTU0gMpETg">
-</a>
+    <img src="https://lh5.googleusercontent.com/proxy/b62OCLYWMYFVjaxKn72cpmBTgG0gU-LwQvjXFqhlSafdBYmq2yTCJglkpd64fhF1R6a04rBMe2I7_ITKr1_4P5Bxj2MlSoMBkjiVF9nw4Lr6YC1AXvTU0gMpETg" alt="Link 3">
+  </a>
 </div>
 
-    
+<div class="layout">
 <main id="contact-posts">
     <!-- Autores carregados via JS -->
 </main>
+
+    <aside class="sidebar">
+
+  <div class="banner-card">
+    <a href="https://iear.uff.br/" target="_blank">
+      <img src="https://iear.uff.br/wp-content/uploads/sites/232/2021/08/cropped-WhatsApp-Image-2021-08-12-at-11.33.49-1.jpeg" alt="Banner">
+    </a>
+  </div>
+
+  <div class="banner-card">
+    <a href="https://catalogobibliotecas.uff.br/" target="_blank">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbSyreN-h7zWneVKBZ2uDXYvuWM2a0SzSDug&s" alt="Banner">
+    </a>
+  </div>
+
+  <div class="banner-card">
+    <a href="https://bibliotecas.uff.br/" target="_blank">
+      <img src="https://bibliotecas.uff.br/wp-content/uploads/sites/164/2023/03/Cabecalho-bibliotecas-UFF-unidades2.png" alt="Banner">
+    </a>
+  </div>
+
+  <div class="banner-card">
+    <a href="https://www.periodicos.capes.gov.br/" target="_blank">
+      <img src="https://periodicos.ufs.br/public/site/images/marthasuzana/capes-logo.jpg" alt="Banner">
+    </a>
+  </div>
+
+</aside>
+</div>
 
       <footer>
         <p>&copy; 2025 Centro Acadêmico Luiza Mahin</p>
       </footer>
 
-      <style>
+ <style>
+.layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  max-width: 1000px;
+  margin: 2rem -2.5rem 1rem auto;
+  padding: 0 1rem;
+}
+.sidebar {
+  width: 250px;
+  display: flex;
+  flex-direction:column;
+  margin-top: 2rem!important;
+  margin-right: 5.5rem!important;
+  gap: 1.5rem;
+  transform: translateY(-10px);
+  animation: igIn 0.8s ease forwards;
+}
+  .banner-card {
+  background: white;
+  border-radius: 8px;
+  padding: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.banner-card img {
+  width: 100%;
+  border-radius: 6px;
+  display: block;
+}
+             @keyframes logoIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes titleIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+        .title-anim {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: titleIn 0.8s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.logo-anim {
+          margin-left: 2.9rem;
+  width: 110px!important;
+  image-rendering: crisp-edges;
+  border-radius: 100%;
+  position: relative;
+
+  opacity: 0;
+  transform: scale(0.8);
+  animation: logoIn 0.8s ease forwards;
+  transition: transform 0.4s ease;
+}
+.logo-anim:hover {
+  cursor: pointer;
+  transform: scale(0.8);
+}
+
+        h3{
+          font-size: 22px;
+        }
+        .highlight {
+  position: relative;
+  color: #fab204;
+}
+
+.highlight::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 3px;
+  background: #fab204;
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.highlight:hover::after {
+  width: 100%;
+}
+
+a{
+  color: #7540a5;
+  text-decoration: none;
+}
+        .author-coord{
+          color: #777;
+        }
         .author-card {
   text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
 }
+
+/* Delay automático usando nth-child */
+.author-card:nth-child(1) { animation-delay: 0.1s; }
+.author-card:nth-child(2) { animation-delay: 0.2s; }
+.author-card:nth-child(3) { animation-delay: 0.3s; }
+.author-card:nth-child(4) { animation-delay: 0.4s; }
+.author-card:nth-child(5) { animation-delay: 0.5s; }
+/* se tiver mais, pode seguir */
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .author-photo {
   width: 120px;
   height: 120px;
@@ -72,33 +220,30 @@
   object-fit: cover;
   margin-bottom: 1rem;
 }
-
+.uffmail {
+  font-weight: 600;
+  color: #ffae00;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.uffmail:hover {
+  color: #666;
+}
 .author-bio {
   font-size: 0.95rem;
   color: #444;
 }
-        .iear{
-           background: white;
-            border-radius: 8px;
-        position:relative;
-          top: 30px;
-          float: right;
-        }
-        .ig{
-position: absolute;
-          float: right;
-        }
-        
+       
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #7540a5
+  background: #7540a5;
 }
 
 header {
   background: #333;
   color: white;
-  padding: 1rem;
+  padding: 1.5rem!important;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -151,64 +296,130 @@ footer {
   font-size: 0.85rem;
   color: #666;
 }
-      </style>
-     <script>
-const authors = [
+
+.main-nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  position: relative;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 10px;
+}
+
+.dropdown {
+  position: relative;
+  color: #eea00e;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+/* Menu escondido */
+.dropdown-menu {
+  padding: 0.6rem;
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  background: #333;
+  border-radius: 6px;
+  min-width: 220px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+
+  /* Animação */
+  opacity: 0;
+  transform: translateY(10px);
+  visibility: hidden;
+
+  transition: all 0.4s ease;
+}
+
+/* Links internos */
+.dropdown-menu a {
+  display: block;
+  padding: 10px;
+  color: white;
+  white-space: nowrap;
+  transition: all 0.6s ease;
+}
+
+.dropdown-menu a:hover {
+  background: #555;
+  transition: all 0.6s ease;
+}
+
+/* MOSTRAR AO PASSAR O MOUSE */
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+</style>
+
+
+       <script>
+   const authors = [
   {
     name: "Leandro Ramos da Silva",
     photo: "https://wwws.cnpq.br/cvlattesweb/pkg_util_img.show_foto?v_cod=K1129846D0",
-    coord: "Coordenação Administrativa",
-    bio: "Graduando em Pedagogia, 5° Período pelo IEAR-UFF.",
+    coord: "Coodenador Administrativo",
+    bio: "Graduando em Pedagogia, 5° Período pelo Instituto de Educação de Angra dos Reis da Universidade Federal Fluminense (IEAR-UFF).",
     lattes: "https://lattes.cnpq.br/7294248395472927",
-    uffmail: "Leandroramossilva@id.uff.br"
+    uffmail: "leandroramossilva@id.uff.br"
   },
   {
     name: "Paula Enaely de Marins Oliveira",
-    photo: "assets/avatar-default.png",
-    coord: "Coordenação de Infraestrutura",
-    bio: "Graduanda em Pedagogia, 8° Período pelo IEAR-UFF.",
+    photo: "",
+    coord: "Coordenadora de Infraestrutura",
+    bio: "Graduanda em Pedagogia, 8° Período pelo Instituto de Educação de Angra dos Reis da Universidade Federal Fluminense (IEAR-UFF).",
     lattes: "",
     uffmail: "p_enaely@id.uff.br"
   },
   {
     name: "Tabata da Silva do Carmo",
-    photo: "assets/avatar-default.png",
-    coord: "Coordenação Cultural",
-    bio: "Graduanda em Pedagogia, 2° Período pelo IEAR-UFF.",
-    lattes: "",
-    uffmail: "Tabatacarmo@id.uff.br"
+    photo: "http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K1263669P1",
+    coord: "Coordenadora Cultural",
+    bio: "Graduanda em Pedagogia, 2° Período pelo Instituto de Educação de Angra dos Reis da Universidade Federal Fluminense (IEAR-UFF).",
+    lattes: "http://lattes.cnpq.br/7169344509560148",
+    uffmail: "tabatacarmo@id.uff.br"
   },
   {
-    name: "Vivian dos Santos de Assis",
-    photo: "assets/avatar-default.png",
-    coord: "Coordenação de Comunicação",
-    bio: "Graduanda em Pedagogia, 7° Período pelo IEAR-UFF.",
-    lattes: "",
-    uffmail: "V_assis@id.uff.br"
+  name: "Vivian dos Santos de Assis",
+    photo: "http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K1195628H9",
+    coord: "Coordenadora de Comunicação",
+    bio: "Graduanda em Pedagogia, 7° Período pelo Instituto de Educação de Angra dos Reis da Universidade Federal Fluminense (IEAR-UFF).",
+    lattes: "http://lattes.cnpq.br/9792445486892065",
+    uffmail: "v_assis@id.uff.br"
   },
   {
-    name: "Louize dos Santos de Lima Rodrigues",
-    photo: "assets/avatar-default.png",
-    coord: "Coordenação Política",
-    bio: "Graduanda em Pedagogia, 4° Período pelo IEAR-UFF.",
-    lattes: "",
-    uffmail: "Louizesantos@id.uff.br"
+   name: "Louize dos Santos de Lima Rodrigues",
+    photo: "http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K1267379D9",
+    coord: "Coordenadora Política",
+    bio: "Graduanda em Pedagogia, 4° Período pelo Instituto de Educação de Angra dos Reis da Universidade Federal Fluminense (IEAR-UFF).",
+    lattes: "http://lattes.cnpq.br/5210322833998607",
+    uffmail: "louizesantos@id.uff.br"
   },
-{
-    name: "Pablo Quezado",
+  {
+    name: "Pablo Silva Quezado de Oliveira",
     photo: "http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K1197212A3",
     coord: "Coordenação Acadêmica",
     bio: "Graduando em Pedagogia, 7° Período pelo Instituto de Educação de Angra dos Reis da Universidade Federal Fluminense (IEAR-UFF).",
     lattes: "http://lattes.cnpq.br/3986415920870527",
-    uffmail: "Pabloquezado@id.uff.br"
+    uffmail: "pabloquezado@id.uff.br"
   },
   {
    name: "Vanessa da Silva Valencio",
-    photo: "",
+    photo: "http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K1509067D6",
     coord: "Coordenadora de Pós-Graduação",
     bio: "Graduanda em Pedagogia, 4° Período pelo Instituto de Educação de Angra dos Reis da Universidade Federal Fluminense (IEAR-UFF).",
-    lattes: "",
-    uffmail: "Vanessav@id.uff.br"
+    lattes: "http://lattes.cnpq.br/8052743339085056",
+    uffmail: "vanessav@id.uff.br"
   },
   {
    name: "Wendel Fabiano Alfredo",
@@ -216,7 +427,7 @@ const authors = [
     coord: "1° Suplente",
     bio: "Graduando em Pedagogia, 2° Período pelo Instituto de Educação de Angra dos Reis da Universidade Federal Fluminense (IEAR-UFF).",
     lattes: "",
-    uffmail: "Wendelfabiano@id.uff.br"
+    uffmail: "wendelfabiano@id.uff.br"
   },
   {
      name: "Guilherme Lacerda do Valle",
@@ -224,7 +435,7 @@ const authors = [
     coord: "2° Suplência",
     bio: "Graduando em Pedagogia, 2° Período pelo Instituto de Educação de Angra dos Reis da Universidade Federal Fluminense (IEAR-UFF).",
     lattes: "",
-    uffmail: "Lacerdaguilherme@id.uff.br"
+    uffmail: "lacerdaguilherme@id.uff.br"
   },
   {
     name: "Isabel de Abreu Ceia",
@@ -232,7 +443,7 @@ const authors = [
     coord: "3° Suplência",
     bio: "Graduanda em Pedagogia, 5° Período pelo Instituto de Educação de Angra dos Reis da Universidade Federal Fluminense (IEAR-UFF).",
     lattes: "",
-    uffmail: "Isaceia@id.uff.br"
+    uffmail: "isaceia@id.uff.br"
   }
 ];
 
@@ -245,16 +456,20 @@ authors.forEach(author => {
   authorCard.innerHTML = `
     <img src="${author.photo}" alt="${author.name}" class="author-photo">
     <h2>${author.name}</h2>
-    <p><strong>${author.coord}</strong></p>
+    <p class="author-coord">${author.coord}</p>
     <p class="author-bio">${author.bio}</p>
     <p>
-      ${author.lattes ? `<a href="${author.lattes}" target="_blank">Currículo Lattes</a> |` : ""}
-      <a href="mailto:${author.uffmail}">${author.uffmail}</a>
-    </p>
+      <small>
+      <img src="https://lh5.googleusercontent.com/proxy/4d6-dVOcMrp7HoU9t-bhgfgoqSLWbcgosoSMPp956YzTQzTfRfFDiUXR3hssFIJDTEe0ozmcq4wv6E7AiZn7-kNEwVvhboggb9gHgMMh-webTRvzg8ndDb7Sffpa9N2N4ThiQboH11-KkcPt_C4Qj0ZXxeEREqmIp7k" style="width:17px;">
+      <a style="font-weight: 600;" href="${author.lattes}" target="_blank">Currículo Lattes</a> |
+      <img src="https://cdn-icons-png.flaticon.com/512/6711/6711567.png" style="width:17px;">
+      <a class="uffmail" a href="mailto:${author.uffmail}">${author.uffmail}</a>
+    </small>
+      </p>
   `;
 
   container.appendChild(authorCard);
 });
-</script>
+      </script>
 </body>
 </html>
