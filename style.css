@@ -85,17 +85,17 @@
   padding: 8px 10px;
 }
 
-.dropdown {
+.dropdow {
   position: relative;
   color: #eea00e;
 }
 
-.dropdown-toggle {
+.dropdow-toggle {
   cursor: pointer;
 }
 
 /* Menu escondido */
-.dropdown-menu {
+.dropdow-menu {
   padding: 0.6rem;
   position: absolute;
   top: 100%;
@@ -116,7 +116,7 @@
 }
 
 /* Links internos */
-.dropdown-menu a {
+.dropdow-menu a {
   display: block;
   padding: 10px;
   color: white;
@@ -124,13 +124,13 @@
   transition: all 0.6s ease;
 }
 
-.dropdown-menu a:hover {
+.dropdow-menu a:hover {
   background: #555;
   transition: all 0.6s ease;
 }
 
 /* MOSTRAR AO PASSAR O MOUSE */
-.dropdown:hover .dropdown-menu {
+.dropdow:hover .dropdow-menu {
   opacity: 1;
   transform: translateY(0);
   visibility: visible;
