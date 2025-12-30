@@ -15,31 +15,185 @@
     <title>Centro Acadêmico Luiza Mahin</title>
     <link rel="icon" type="image/x-icon" href="assets/calm.png">
 	<link rel="stylesheet" href="style.css">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
 <body>
+  <div id="new-post-notification" class="new-post hidden">
+    <span>📢 Nova postagem publicada</span>
+    <button id="refresh-btn">Conferir</button>
+  </div>  
+  <style>
+.new-post {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #111;
+  color: #fff;
+  padding: 14px 18px;
+  border-radius: 8px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,.25);
+  z-index: 999;
+}
+.new-post button {
+  background: #fab204;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.hidden {
+  display: none;
+}
+  </style>
+<!-- mobile -->
+<div id="mobile-only">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+      <img id="logo" src="assets/calm.png" style="width: 110px; border-radius: 100%;"><div id="text">Centro Acadêmico Luiza <span class="highlight">Mahin</span></div>
+    </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Ensino, Pesquisa e Extensão
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+				
+              <li><a class="dropdown-item" href="#">PIBID</a></li>
+              <li><a class="dropdown-item" href="#">PIBIC</a></li>
+              <li><a class="dropdown-item" href="#">Extensão</a></li>
+            </ul>
+          </li>
+          <!-- Outros Itens do Menu -->
+          <li class="nav-item">
+          <a class="nav-link" href="quemsomos.html">Quem somos</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+<!-- mobile -->
     <header>
         <img class="logo-anim" src="assets/calm.png" style="width: 100px; image-rendering:crisp-edges; border-radius: 100%; position: relative;">
         <a style="text-decoration:none; color: white;" href="index.html">
         <h3 class="title-anim">Centro Acadêmico Luiza <span class="highlight">Mahin</span></h3>
         </a>
+<!-- mobile -->
+		 <style>
+#mobile-only{
+display: none;
+}
+@media only screen and (max-width: 770px){
+.navbar-nav .dropdown-menu{
+background: #333;
+text-align: center;
+}
+.dropdown-item{
+  width: auto;
+  font-size: 18px;
+  background: #7540a5;
+  color: #fab204;
+  transition: all 0.3s ease;
+}
+.dropdown-item:hover{
+  background: #fab204;
+  color: #7540a5;
+  transition: all 0.3s ease;
+}
+  .navbar-dark .navbar-nav .nav-link{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+  }
+  .navbar-dark .navbar-brand{
+  position: relative; 
+  max-width: 100%; 
+  display: inline-block; 
+  }
+#text{
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  margin-left: 14.5rem;
+  transform: translate(-50%, -50%); 
+  color: white; 
+  font-weight: bold; 
+  text-align: center;
+}
+  header{
+    display: none!important;
+  }
+  #mobile-only{
+  display: block;
+}
+/*.container-fluid{
+  background: #333;
+}*/
+}
+</style>
+<style>
+        @media only screen and (max-width: 770px){
+    html, body {
+    overflow-x: hidden;
+    max-width: 100%; 
+      }
+.title-anim{
+margin: 25px;
+display:grid;
+text-align: left;
+font-size: 2rem;
+display: none;
+}
+          .main-nav{
+            visibility: hidden;
+          }
+    .ig{
+        visibility: hidden;
+    }
+        .sidebar{
+          visibility: hidden;
+        }
+        .pagination button {
+            width: 50%;
+          }
+        footer{
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+    }
+    footer > p{
+font-size: 1.2rem;
+    }
+  }
+  </style>
+		<!-- mobile -->
+
         <nav class="main-nav">
-          <a href="index.html">Notícias</a>
-          <div class="dropdown">
-            <a href="#" class="dropdown-toggle">
+          <div class="dropdow">
+            <a href="#" class="dropdow-toggle">
               Ensino, Pesquisa e Extensão ▾
             </a>
-            <div class="dropdown-menu">
-              <a href="pibid.html">Iniciação à Docência</a>
-              <a href="pibic.html">Iniciação Científica</a>
-              <a href="pe.html">Projetos de Extensão</a>
-              <a href="public.html">Publicações</a>
+            <div class="dropdow-menu">
+              <a href="#">Iniciação à Docência</a>
+              <a href="#">Iniciação Científica</a>
+              <a href="#">Projetos de Extensão</a>
             </div>
           </div>
           <a href="quemsomos.html">Quem somos</a>
           <a href="login.html">Administrador</a>
         </nav>        
       </header>
-        
+		
 <div class="ig">
   <a href="https://www.instagram.com/ca.luisamahin/" target="_blank" rel="noopener noreferrer">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1200px-Instagram_icon.png" alt="Instagram">
@@ -62,7 +216,56 @@
 <div class="layout">
 <main id="posts">
 </main>
+	
+	<!-- paginação -->
+<style>
+  .post.fade {
+  animation: fadeSlide 0.5s ease;
+}
 
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+  .pagination {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 3rem 0;
+}
+
+.pagination button {
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: #fab204;
+  color:white;
+  transition: all 0.3s ease;
+}
+
+.pagination button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination button:hover:not(:disabled) {
+  transform: scale(1.05);
+}
+</style>
+	<!-- paginação -->
+	
 <aside class="sidebar">
   <div class="banner-card">
     <a href="https://iear.uff.br/" target="_blank">
