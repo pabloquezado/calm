@@ -1,13 +1,18 @@
 // 🔥 Firebase imports
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import {
-  getFirestore,
   collection,
+  getDocs,
+  getFirestore,
   query,
   where,
   orderBy,
-  getDocs
+  limit,
+  startAfter,
+  startAt,
+  onSnapshot
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 
 // 🔧 Config
 const firebaseConfig = {
@@ -25,15 +30,21 @@ const db = getFirestore(app);
 
 const container = document.getElementById("posts");
 
-const q = query(
-  collection(db, "posts"),
-  where("published", "==", true),
-  orderBy("createdAt", "desc")
-);
+// Notificações
 
-const snap = await getDocs(q);
+let latestPostTimestamp = null;
+let initialLoad = true;
 
-snap.forEach(docSnap => {
+const notification = document.getElementById("new-post-notification");
+const refreshBtn = document.getElementById("refresh-btn");
+//
+
+const PAGE_SIZE = 2;
+let pageStack = [];
+let currentPage = 0;
+
+// 🔹 Renderiza um post
+function renderPost(docSnap) {
   const post = docSnap.data();
 
   const article = document.createElement("article");
@@ -43,15 +54,113 @@ snap.forEach(docSnap => {
     <img src="${post.coverImage}" class="post-image">
 
     <div class="post-header">
-    <h2>${post.title}</h2>
-    <small>
-    Publicado em ${post.createdAt.toDate().toLocaleDateString()}
-      ${post.updatedAt ? `• por <b>${post.authorName}</b>` : ""}
-    </small>
-  </div>
-  
-    <p style="color: #444;">${post.excerpt}</p>
+      <h2>${post.title}</h2>
+      <small style="margin-top: -0.4rem;">
+        Publicado em ${post.createdAt.toDate().toLocaleDateString()}
+        • por <b>
+          <a href="author.html?id=${post.authorId}" class="author-link">
+            ${post.authorCoord}
+          </a>
+        </b>
+      </small>
+    </div>
+    <p style="margin-top: 0.5rem;" style="color:#444">${post.excerpt}</p>
     <a href="post.html?id=${docSnap.id}">Ler mais...</a>
   `;
+
   container.appendChild(article);
+}
+
+// 🔹 Renderiza paginação
+function renderPagination(hasNext) {
+  const pagination = document.createElement("div");
+  pagination.className = "pagination";
+
+  pagination.innerHTML = `
+    <button id="prev-btn" ${currentPage === 0 ? "disabled" : ""}>
+      Anterior
+    </button>
+
+    <button id="next-btn" ${!hasNext ? "disabled" : ""}>
+      Próximo
+    </button>
+  `;
+
+  container.appendChild(pagination);
+
+  document.getElementById("next-btn").onclick = () => loadPosts("next");
+  document.getElementById("prev-btn").onclick = () => loadPosts("prev");
+}
+
+// 🔹 Carrega posts
+async function loadPosts(direction = "next") {
+  container.innerHTML = "";
+
+  let q = query(
+    collection(db, "posts"),
+    where("published", "==", true),
+    orderBy("createdAt", "desc"),
+    limit(PAGE_SIZE)
+  );
+
+  // ▶️ PRÓXIMO
+  if (direction === "next" && pageStack[currentPage]) {
+    q = query(q, startAfter(pageStack[currentPage].lastDoc));
+    currentPage++;
+  }
+
+  // ◀️ ANTERIOR
+  if (direction === "prev") {
+    currentPage--;
+    const prevPage = pageStack[currentPage];
+    q = query(q, startAt(prevPage.firstDoc));
+  }
+
+  const snap = await getDocs(q);
+
+  if (snap.empty) return;
+
+  snap.forEach(doc => renderPost(doc));
+
+  // 🔹 salva cursores corretamente
+  if (!pageStack[currentPage]) {
+    pageStack[currentPage] = {
+      firstDoc: snap.docs[0],
+      lastDoc: snap.docs[snap.docs.length - 1]
+    };
+  }
+
+  renderPagination(snap.size === PAGE_SIZE);
+}
+
+// 🔹 Inicializa
+loadPosts();
+
+
+const q = query(
+  collection(db, "posts"),
+  where("published", "==", true),
+  orderBy("createdAt", "desc"),
+  limit(1)
+);
+
+onSnapshot(q, snapshot => {
+  if (snapshot.empty) return;
+
+  const post = snapshot.docs[0].data();
+  const postTime = post.createdAt?.toMillis();
+
+  if (!latestPostTimestamp) {
+    latestPostTimestamp = postTime;
+    initialLoad = false;
+    return;
+  }
+
+  if (!initialLoad && postTime > latestPostTimestamp) {
+    notification.classList.remove("hidden");
+  }
+});
+
+refreshBtn.addEventListener("click", () => {
+  location.reload();
 });
