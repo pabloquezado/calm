@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
     <meta property="og:type" content="website">
     <meta property="og:title" content="Centro Acadêmico Luiza Mahin - IEAR/UFF">
     <meta property="og:description" content="Representando a voz ativa dos alunos de Pedagogia! ⚜ IEAR/UFF ⚜ - Gestão Educ(a)ção ✊">
@@ -7,30 +8,177 @@
     <meta property="og:image" content="https://pabloquezado.github.io/calm/assets/capacalm.png"/>
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="300">
-    <meta property="og:image:height" content="300"
+    <meta property="og:image:height" content="300">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.6, maximum-scale=1.0, user-scalable=no">
     <title>Centro Acadêmico Luiza Mahin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link rel="icon" type="image/x-icon" href="assets/calm.png">
     <link rel="stylesheet" href="style.css">
+    </head>
 <body>
-        <header>
-        <img class="logo-anim" src="assets/calm.png" style="width: 100px; image-rendering:crisp-edges; border-radius: 100%; position: relative;">
+
+<!-- mobile -->
+<div id="mobile-only">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+      <img id="logo" src="assets/calm.png" style="width: 110px; border-radius: 100%;"><div id="text">Centro Acadêmico Luiza <span class="highlight">Mahin</span></div>
+    </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Ensino, Pesquisa e Extensão
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <!-- Submenu 1 -->
+              <li><a class="dropdown-item" href="#">PIBID</a></li>
+              <!-- Submenu 2 -->
+              <li><a class="dropdown-item" href="#">PIBIC</a></li>
+              <!-- Submenu 3 -->
+              <li><a class="dropdown-item" href="#">Extensão</a></li>
+            </ul>
+          </li>
+          <!-- Outros Itens do Menu -->
+          <li class="nav-item">
+          <a class="nav-link" href="#">Quem somos</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+<!-- mobile -->
+
+   <header>
+   <img onclick="window.location.href='index.html';" class="logo-anim" src="assets/calm.png" style="width: 100px; image-rendering:crisp-edges; border-radius: 100%; position: relative;">
    <a style="text-decoration:none; color: white;" href="quemsomos.html"></a>
      <h2 class="title-anim">Quem <span class="highlight">somos</span></h2>
     </a>
+
+
+    <style>
+      #mobile-only{
+      display: none;
+      }
+      @media only screen and (max-width: 770px){
+        .post{
+          width: 530px!important;
+        }
+      .navbar-nav .dropdown-menu{
+      background: #333;
+      text-align: center;
+      }
+      .dropdown-item{
+        width: auto;
+        font-size: 18px;
+        background: #7540a5;
+        color: #fab204;
+        transition: all 0.3s ease;
+      }
+      .dropdown-item:hover{
+        background: #fab204;
+        color: #7540a5;
+        transition: all 0.3s ease;
+      }
+      
+        .navbar-dark .navbar-nav .nav-link{
+          text-align: center;
+          color: white;
+          font-size: 20px;
+        }
+        .navbar-dark .navbar-brand{
+        position: relative; /* Establishes a positioning context for the absolute text */
+        max-width: 100%; /* Ensures the container is responsive */
+        display: inline-block; /* Helps wrap the container around the image */
+        }
+      #text{
+        position: absolute;
+        top: 50%; /* Starts positioning from the top center */
+        left: 50%; /* Starts positioning from the left center */
+        margin-left: 14.5rem;
+        transform: translate(-50%, -50%); /* Centers the text perfectly */
+        color: white; /* Makes text visible on a darker image */
+        font-weight: bold; /* Makes the text bolder */
+        text-align: center; /* Centers the text block */
+      }
+        header{
+          display: none!important;
+        }
+        #mobile-only{
+        display: block;
+      }
+      /*.container-fluid{
+        background: #333;
+      }*/
+      }
+      </style>
+      
+      
+      
+      
+      
+      <style>
+          .menu-toggle{
+            display: none;
+          }
+              @media only screen and (max-width: 770px){
+      
+                html, body {
+          overflow-x: hidden; /* Hides horizontal scrollbar */
+          max-width: 100%;   /* Ensures content fits */
+            }
+            .menu-toggle{
+            display: block;
+          } 
+      .title-anim{
+      margin: 25px;
+      display:grid;
+      text-align: left;
+      font-size: 2rem;
+      display: none;
+      }
+                .main-nav{
+                  visibility: hidden;
+                }
+          .ig{
+              visibility: hidden;
+          }
+              .sidebar{
+                visibility: hidden;
+              }
+              /* */
+              .pagination button {
+                  width: 50%;
+                }
+              /*  */
+              footer{
+            width: 100%;
+            bottom: 0;
+          }
+          footer > p{
+      font-size: 1.2rem;
+          }
+        }
+      
+        </style>
+
+
       <nav class="main-nav">
-        <a href="index.html">Notícias</a>
         <div class="dropdown">
           <a href="#" class="dropdown-toggle">
             Ensino, Pesquisa e Extensão ▾
           </a>
           <div class="dropdown-menu">
-            <a href="pibid.html">Iniciação à Docência</a>
-            <a href="pibic.html">Iniciação Científica</a>
-            <a href="pe.html">Projetos de Extensão</a>
-            <a href="public.html">Publicações</a>
+            <a href="#">Iniciação à Docência</a>
+            <a href="#">Iniciação Científica</a>
+            <a href="#">Projetos de Extensão</a>
           </div>
         </div>    
         <a href="quemsomos.html">Quem somos</a>
@@ -42,24 +190,64 @@
   <a href="https://www.instagram.com/ca.luisamahin/" target="_blank" rel="noopener noreferrer">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1200px-Instagram_icon.png" alt="Instagram">
   </a>
+
   <a href="https://app.uff.br/iduff/" target="_blank" rel="noopener noreferrer">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU6n78kqUYVMAvSP_SM8AaPE7ruyOoT5JFxA&s
     " alt="Link 1">
   </a>
+
   <a href="https://www.uff.br/proaes/bolsas-e-auxilios/" target="_blank" rel="noopener noreferrer">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE-0CQpjhexGA0lgb3DZxQcH3v3OAsTUOYag&s" alt="Link 2">
   </a>
+
   <a href="https://monitoria.uff.br/" target="_blank" rel="noopener noreferrer">
     <img src="https://lh5.googleusercontent.com/proxy/b62OCLYWMYFVjaxKn72cpmBTgG0gU-LwQvjXFqhlSafdBYmq2yTCJglkpd64fhF1R6a04rBMe2I7_ITKr1_4P5Bxj2MlSoMBkjiVF9nw4Lr6YC1AXvTU0gMpETg" alt="Link 3">
   </a>
 </div>
+
+<style>
+      .ig {
+  position: absolute;
+  top: 10.3rem;
+  left: 4.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: igIn 0.8s ease forwards;
+}
+@keyframes igIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.ig a {
+  display: inline-block;
+  transition: transform 0.4s ease;
+}
+
+.ig a:hover {
+  transform: scale(1.1);
+}
+.ig img {
+  width: 100px;
+  display: block;
+  border-radius: 100%;
+}
+</style>
+
 
 <div class="layout">
 <main id="contact-posts">
     <!-- Autores carregados via JS -->
 </main>
 
-    <aside class="sidebar">
+
+<aside class="sidebar">
 
   <div class="banner-card">
     <a href="https://iear.uff.br/" target="_blank">
@@ -88,14 +276,7 @@
 </aside>
 </div>
 
-      <footer>
-       <p>&copy; <small>2025</small> &#8203; &#8203; Centro Acadêmico Luiza Mahin &#8203; <span style="font-weight: bold;"class="highlight">Gestão Educ(a)ção</span></p>
-      </footer>
-
- <style>
-.uffmail {
-    color: #ffae00!important;
-}
+<style>
 .layout {
   display: flex;
   align-items: flex-start;
@@ -126,7 +307,14 @@
   border-radius: 6px;
   display: block;
 }
-             @keyframes logoIn {
+</style>
+
+      <footer>
+        <p>&copy; <small>2025</small> &#8203; &#8203; Centro Acadêmico Luiza Mahin &#8203; <span style="font-weight: bold;"class="highlight">Gestão Educ(a)ção</span></p>
+      </footer>
+
+      <style>
+      @keyframes logoIn {
   to {
     opacity: 1;
     transform: scale(1);
@@ -313,17 +501,17 @@ footer {
   padding: 8px 10px;
 }
 
-.dropdown {
+.dropdow {
   position: relative;
   color: #eea00e;
 }
 
-.dropdown-toggle {
+.dropdow-toggle {
   cursor: pointer;
 }
 
 /* Menu escondido */
-.dropdown-menu {
+.dropdow-menu {
   padding: 0.6rem;
   position: absolute;
   top: 100%;
@@ -344,7 +532,7 @@ footer {
 }
 
 /* Links internos */
-.dropdown-menu a {
+.dropdow-menu a {
   display: block;
   padding: 10px;
   color: white;
@@ -352,20 +540,20 @@ footer {
   transition: all 0.6s ease;
 }
 
-.dropdown-menu a:hover {
+.dropdow-menu a:hover {
   background: #555;
   transition: all 0.6s ease;
 }
 
 /* MOSTRAR AO PASSAR O MOUSE */
-.dropdown:hover .dropdown-menu {
+.dropdow:hover .dropdow-menu {
   opacity: 1;
   transform: translateY(0);
   visibility: visible;
 }
-</style>
-    
-       <script>
+      </style>
+
+      <script>
    const authors = [
   {
     name: "Leandro Ramos da Silva",
@@ -377,7 +565,7 @@ footer {
   },
   {
     name: "Paula Enaely de Marins Oliveira",
-    photo: "",
+    photo: "http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4732719H8",
     coord: "Coordenadora de Infraestrutura",
     bio: "Graduanda em Pedagogia, 8° Período pelo Instituto de Educação de Angra dos Reis da Universidade Federal Fluminense (IEAR-UFF).",
     lattes: "",
@@ -425,7 +613,7 @@ footer {
   },
   {
    name: "Wendel Fabiano Alfredo",
-    photo: "",
+    photo: "http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4732719H8",
     coord: "1° Suplente",
     bio: "Graduando em Pedagogia, 2° Período pelo Instituto de Educação de Angra dos Reis da Universidade Federal Fluminense (IEAR-UFF).",
     lattes: "",
@@ -433,7 +621,7 @@ footer {
   },
   {
      name: "Guilherme Lacerda do Valle",
-    photo: "",
+    photo: "http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4732719H8",
     coord: "2° Suplência",
     bio: "Graduando em Pedagogia, 2° Período pelo Instituto de Educação de Angra dos Reis da Universidade Federal Fluminense (IEAR-UFF).",
     lattes: "",
@@ -441,7 +629,7 @@ footer {
   },
   {
     name: "Isabel de Abreu Ceia",
-    photo: "",
+    photo: "http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4732719H8",
     coord: "3° Suplência",
     bio: "Graduanda em Pedagogia, 5° Período pelo Instituto de Educação de Angra dos Reis da Universidade Federal Fluminense (IEAR-UFF).",
     lattes: "",
