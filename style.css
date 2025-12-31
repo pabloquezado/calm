@@ -1,4 +1,8 @@
-  .new-post {
+    .main-nav a:hover{
+      color: white;
+    }
+
+.new-post {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -23,8 +27,6 @@
 .hidden {
   display: none;
 }
-
-
 
 #mobile-only{
 display: none;
