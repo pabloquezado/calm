@@ -1,14 +1,13 @@
 .uffmail {
     font-weight: 600;
-    color: #ffae00;
+    color: #ffae00!important;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-
 @media only screen and (max-width: 770px){
 footer {
-    position: relative;
+    position: static!important;
 }
 .author-bio{
           font-size: 1rem!important;
