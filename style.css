@@ -1,4 +1,28 @@
-    .main-nav a:hover{
+.uffmail {
+    font-weight: 600;
+    color: #ffae00;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+
+@media only screen and (max-width: 770px){
+footer {
+    position: relative;
+}
+.author-bio{
+          font-size: 1rem!important;
+        }
+small img{
+  margin-bottom: 0.2rem;
+  width: 25px!important;
+}
+small a{
+  font-size: 17px;
+}
+}
+
+.main-nav a:hover{
       color: white;
     }
 
